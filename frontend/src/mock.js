@@ -1,52 +1,60 @@
-// Mock data for DJ Ole Helledie website
+// Mock data for Ole Helledie - Sound Artist & Musical Storyteller website
 // This file contains placeholder data that will be replaced with backend data later
 
 export const mockData = {
   // Bio and about information
   bio: {
-    en: "Ole Helledie is a passionate DJ and music producer with years of experience in creating unforgettable musical experiences. Known for his unique style and ability to read the crowd, Ole brings energy and professionalism to every event. From intimate gatherings to large-scale celebrations, he crafts the perfect soundtrack for any occasion.",
-    da: "Ole Helledie er en passioneret DJ og musikproducent med års erfaring i at skabe uforglemmelige musikalske oplevelser. Kendt for sin unikke stil og evne til at læse publikum, bringer Ole energi og professionalisme til enhver begivenhed. Fra intime sammenkomster til store fester skaber han det perfekte soundtrack til enhver lejlighed."
+    en: "Ole Helledie crafts sonic journeys that transcend ordinary listening experiences. Through the delicate art of musical curation and live mixing, he weaves together sounds that speak to the soul. Each performance is a unique narrative, born from the energy of the moment and the collective heartbeat of those present.",
+    da: "Ole Helledie skaber lydrejser, der transcenderer almindelige lytteoplevelser. Gennem den delikate kunst at kuratere og mixe live musik væver han lyde sammen, der taler til sjælen. Hver optræden er en unik fortælling, født af øjeblikkets energi og de tilstedeværendes kollektive hjerteslag."
   },
 
-  // Gallery images with captions
+  // Artistic philosophy
+  philosophy: {
+    en: "Music is the bridge between the tangible and the transcendent. In each performance, I seek not just to entertain, but to create a sacred space where strangers become connected through shared rhythm, where time dissolves, and where the ordinary transforms into the extraordinary.",
+    da: "Musik er broen mellem det håndgribelige og det transcendente. I hver optræden søger jeg ikke kun at underholde, men at skabe et helligt rum, hvor fremmede bliver forbundet gennem fælles rytme, hvor tiden opløses, og hvor det almindelige transformeres til det ekstraordinære."
+  },
+
+  // Gallery images with artistic captions
   gallery: [
     {
       id: 1,
       src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
-      alt: "DJ Equipment Setup",
+      alt: "Atmospheric Lighting",
       caption: {
-        en: "Professional DJ Setup",
-        da: "Professionelt DJ Setup"
+        en: "Where Light Meets Sound",
+        da: "Hvor Lys Møder Lyd"
       }
     },
     {
       id: 2,
       src: "https://images.unsplash.com/photo-1692176548571-86138128e36c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
-      alt: "DJ Performance",
+      alt: "Intimate Setting",
       caption: {
-        en: "Live Performance",
-        da: "Live Optræden"
+        en: "Moments of Connection",
+        da: "Øjeblikke af Forbindelse"
       }
     },
     {
       id: 3,
       src: "https://images.unsplash.com/photo-1569235604186-2594d69668ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxtdXNpYyUyMGF0bW9zcGhlcmV8ZW58MHx8fHwxNzU2MTI3ODI4fDA&ixlib=rb-4.1.0&q=85",
-      alt: "DJ Controller",
+      alt: "Creative Process",
       caption: {
-        en: "Professional Controller",
-        da: "Professionel Controller"
+        en: "The Art of Selection",
+        da: "Kunsten at Udvælge"
       }
     }
   ],
 
   // Contact information
   contact: {
-    email: "ole@djolehelledie.dk",
-    phone: "+45 12 34 56 78",
-    bookingUrl: "https://booking.djolehelledie.dk"
+    email: "ole@olehelledie.dk",
+    artisticStatement: {
+      en: "Connect for musical collaborations and sonic explorations",
+      da: "Forbind dig for musikalske samarbejder og lydlige udforskning"
+    }
   },
 
-  // Family links
+  // Family artistic links
   familyLinks: [
     {
       id: 1,
@@ -55,71 +63,69 @@ export const mockData = {
         da: "Mors Kunstgalleri"
       },
       description: {
-        en: "Explore beautiful artworks and creative expressions",
-        da: "Udforsk smukke kunstværker og kreative udtryk"
+        en: "A lifetime dedicated to visual storytelling and creative expression",
+        da: "Et liv dedikeret til visuel fortælling og kreativt udtryk"
       },
       url: "https://artgallery-placeholder.com"
     },
     {
       id: 2,
       title: {
-        en: "Daughter's DJ Page",
-        da: "Datterens DJ Side"
+        en: "Daughter's Musical Journey",
+        da: "Datterens Musikalske Rejse"
       },
       description: {
-        en: "Discover the next generation of DJ talent",
-        da: "Opdag næste generation af DJ talent"
+        en: "The evolution continues with fresh perspectives and boundless creativity",
+        da: "Evolutionen fortsætter med friske perspektiver og grænseløs kreativitet"
       },
-      url: "https://djpage-placeholder.com"
+      url: "https://musicjourney-placeholder.com"
     }
   ],
 
   // Social media links
   socialMedia: {
-    facebook: "https://facebook.com/djolehelledie",
-    instagram: "https://instagram.com/djolehelledie",
+    facebook: "https://facebook.com/olehelledie",
+    instagram: "https://instagram.com/olehelledie",
     linkedin: "https://linkedin.com/in/olehelledie"
   },
 
-  // Events/performances (for future use)
-  upcomingEvents: [
+  // Artistic experiences (for future use)
+  upcomingExperiences: [
     {
       id: 1,
       date: "2024-08-30",
-      venue: "Copenhagen Music Hall",
-      eventType: "Wedding Reception",
+      venue: "Intimate Gallery Space",
+      experienceType: "Sonic Meditation",
       isPrivate: false
     },
     {
       id: 2,
       date: "2024-09-15",
-      venue: "Private Venue",
-      eventType: "Corporate Event",
-      isPrivate: true
+      venue: "Cultural Center",
+      experienceType: "Audio-Visual Journey",
+      isPrivate: false
     }
   ],
 
-  // Testimonials (for future enhancement)
-  testimonials: [
+  // Artistic reflections (for future enhancement)
+  reflections: [
     {
       id: 1,
-      name: "Sarah & Michael",
-      event: "Wedding",
+      author: "Sophia & Marcus",
+      experience: "Wedding Ceremony",
       text: {
-        en: "Ole made our wedding unforgettable! The music was perfect all night long.",
-        da: "Ole gjorde vores bryllup uforglemmelig! Musikken var perfekt hele natten."
-      },
-      rating: 5
+        en: "Ole transformed our celebration into a transcendent experience. The music carried our emotions and connected every soul present.",
+        da: "Ole forvandlede vores fejring til en transcendent oplevelse. Musikken bar vores følelser og forbandt hver sjæl til stede."
+      }
     },
     {
       id: 2,
-      name: "Copenhagen Events Ltd",
-      event: "Corporate Party",
+      author: "Cultural Arts Collective",
+      experience: "Art Installation Opening",
       text: {
-        en: "Professional, reliable, and fantastic music selection. Highly recommended!",
-        da: "Professionel, pålidelig og fantastisk musikudvælgelse. Kan varmt anbefales!"
-      },
-      rating: 5
+        en: "A masterful weaving of sound and space. Ole's artistic vision elevated our entire exhibition to new heights.",
+        da: "En mesterlig sammenflætning af lyd og rum. Oles kunstneriske vision løftede hele vores udstilling til nye højder."
+      }
     }
   ]
 };
