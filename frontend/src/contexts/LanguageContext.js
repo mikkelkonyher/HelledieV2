@@ -29,7 +29,7 @@ export const LanguageProvider = ({ children }) => {
       
       // About page
       aboutTitle: 'About Ole',
-      aboutBio: 'Ole Helledie crafts sonic journeys that transcend ordinary listening experiences. Through the delicate art of musical curation and live mixing, he weaves together sounds that speak to the soul. Each performance is a unique narrative, born from the energy of the moment and the collective heartbeat of those present.',
+      aboutBio: 'DJ Ole Helledie brings together the art of musical curation with the craft of reading a room. Through years of experience behind the decks, he has developed an intuitive understanding of how music can transform spaces and connect people. Each event becomes a collaborative experience, where the energy of the crowd guides the musical journey from the first track to the last.',
       
       // Gallery
       galleryTitle: 'Visual Stories',
