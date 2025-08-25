@@ -1,4 +1,4 @@
-// Mock data for DJ Ole Helledie - Musical Storyteller & Event Curator website
+// Mock data for DJ Ole Helledie - Simple & Clean Website
 // This file contains placeholder data that will be replaced with backend data later
 
 export const mockData = {
@@ -14,49 +14,60 @@ export const mockData = {
     da: "Hver begivenhed fortæller en historie, og musik er dens mest kraftfulde fortæller. Min rolle som DJ er at lytte dybt - til værterne, til gæsterne, til energien i rummet - og respondere med et soundtrack, der løfter oplevelsen fra almindelig til ekstraordinær."
   },
 
-  // Services and specialties
-  services: {
-    weddings: {
-      en: "Creating the perfect atmosphere for life's most precious moments, from ceremony elegance to reception energy.",
-      da: "Skaber den perfekte atmosfære for livets mest dyrebare øjeblikke, fra ceremoniens elegance til receptionnens energi."
-    },
-    corporate: {
-      en: "Professional event curation for conferences, launches, exhibitions, and cultural celebrations.",
-      da: "Professionel event-kuratoring til konferencer, lanceringer, udstillinger og kulturelle fejringer."
-    },
-    private: {
-      en: "Intimate gatherings and private parties where music becomes the thread that weaves people together.",
-      da: "Intime sammenkomster og private fester, hvor musik bliver tråden, der væver mennesker sammen."
-    }
-  },
-
-  // Gallery images with artistic captions
+  // Gallery images - exactly 6
   gallery: [
     {
       id: 1,
       src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
-      alt: "Professional DJ Setup",
+      alt: "Professional Setup",
       caption: {
-        en: "Where Light Meets Sound",
-        da: "Hvor Lys Møder Lyd"
+        en: "Professional DJ Setup",
+        da: "Professionelt DJ Setup"
       }
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1692176548571-86138128e36c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
-      alt: "Event Performance",
+      src: "https://images.unsplash.com/photo-1578185544327-68fca190b2da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMHBlcmZvcm1hbmNlfGVufDB8fHx8MTc1NjEzMDQ5N3ww&ixlib=rb-4.1.0&q=85",
+      alt: "Live Performance",
       caption: {
-        en: "Moments of Connection",
-        da: "Øjeblikke af Forbindelse"
+        en: "Live Performance",
+        da: "Live Optræden"
       }
     },
     {
       id: 3,
+      src: "https://images.unsplash.com/photo-1698153763051-06fcad199e24?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxESiUyMHBlcmZvcm1hbmNlfGVufDB8fHx8MTc1NjEzMDQ5N3ww&ixlib=rb-4.1.0&q=85",
+      alt: "Event Atmosphere",
+      caption: {
+        en: "Creating Atmosphere",
+        da: "Skaber Atmosfære"
+      }
+    },
+    {
+      id: 4,
+      src: "https://images.unsplash.com/photo-1692176548571-86138128e36c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
+      alt: "Intimate Setting",
+      caption: {
+        en: "Intimate Moments",
+        da: "Intime Øjeblikke"
+      }
+    },
+    {
+      id: 5,
+      src: "https://images.unsplash.com/photo-1640509724989-d8793574d307?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxtdXNpYyUyMGF0bW9zcGhlcmV8ZW58MHx8fHwxNzU2MTMwNTA0fDA&ixlib=rb-4.1.0&q=85",
+      alt: "Outdoor Event",
+      caption: {
+        en: "Outdoor Events",
+        da: "Udendørs Events"
+      }
+    },
+    {
+      id: 6,
       src: "https://images.unsplash.com/photo-1569235604186-2594d69668ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxtdXNpYyUyMGF0bW9zcGhlcmV8ZW58MHx8fHwxNzU2MTI3ODI4fDA&ixlib=rb-4.1.0&q=85",
       alt: "DJ Equipment",
       caption: {
-        en: "The Art of Selection",
-        da: "Kunsten at Udvælge"
+        en: "The Craft",
+        da: "Håndværket"
       }
     }
   ],
@@ -103,47 +114,7 @@ export const mockData = {
     facebook: "https://facebook.com/djolehelledie",
     instagram: "https://instagram.com/djolehelledie", 
     linkedin: "https://linkedin.com/in/olehelledie"
-  },
-
-  // Recent events (for future use)
-  recentEvents: [
-    {
-      id: 1,
-      date: "2024-07-15",
-      venue: "Kronborg Castle",
-      eventType: "Cultural Wedding",
-      location: "Helsingør"
-    },
-    {
-      id: 2,
-      date: "2024-06-20",
-      venue: "Design Museum",
-      eventType: "Exhibition Opening", 
-      location: "Copenhagen"
-    }
-  ],
-
-  // Client reflections (for future enhancement)
-  reflections: [
-    {
-      id: 1,
-      author: "Sophia & Marcus",
-      experience: "Wedding Reception",
-      text: {
-        en: "Ole understood exactly what we wanted - music that would bring our families together while honoring both our backgrounds. The dance floor never emptied!",
-        da: "Ole forstod præcis, hvad vi ønskede - musik, der ville bringe vores familier sammen og samtidig ære begge vores baggrunde. Dansegulvet blev aldrig tomt!"
-      }
-    },
-    {
-      id: 2,
-      author: "Copenhagen Cultural Center",
-      experience: "Art Exhibition Opening",
-      text: {
-        en: "Professional, intuitive, and perfectly attuned to our event's atmosphere. Ole elevated our exhibition opening to something truly special.",
-        da: "Professionel, intuitiv og perfekt indstillet på vores begivenheds atmosfære. Ole løftede vores udstillingsåbning til noget virkelig specielt."
-      }
-    }
-  ]
+  }
 };
 
 export default mockData;
