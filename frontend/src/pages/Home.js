@@ -63,11 +63,11 @@ const Home = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light text-gray-900 mb-6 tracking-wide">
-              Musical Philosophy
+              Creating Musical Experiences
             </h2>
             <div className="w-24 h-px bg-indigo-400 mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
-              Every sound tells a story, every rhythm carries emotion, and every moment holds the potential for transcendence
+              From intimate celebrations to grand gatherings, every event deserves a soundtrack that reflects its unique spirit
             </p>
           </div>
 
@@ -77,10 +77,10 @@ const Home = () => {
                 <Headphones className="text-indigo-600" size={36} />
               </div>
               <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
-                Sonic Landscapes
+                Event Curation
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Creating immersive audio environments that transport listeners beyond the ordinary into realms of pure musical expression
+                Crafting the perfect atmosphere for weddings, corporate events, private parties, and cultural celebrations
               </p>
             </div>
 
@@ -89,10 +89,10 @@ const Home = () => {
                 <Heart className="text-rose-600" size={36} />
               </div>
               <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
-                Emotional Resonance
+                Intuitive Connection
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Connecting with the collective heartbeat of the audience, creating moments of shared euphoria and introspective beauty
+                Reading the room's energy and responding with music that moves both body and soul, creating shared moments
               </p>
             </div>
 
@@ -101,10 +101,10 @@ const Home = () => {
                 <Waves className="text-emerald-600" size={36} />
               </div>
               <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
-                Flow & Rhythm
+                Musical Journey
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Weaving together musical threads that ebb and flow like natural tides, honoring the organic nature of sound and silence
+                Weaving together genres and eras to create seamless flows that honor both the music and the moment
               </p>
             </div>
           </div>
