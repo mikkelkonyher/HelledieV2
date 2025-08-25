@@ -74,7 +74,7 @@ export const LanguageProvider = ({ children }) => {
       
       // Footer
       contactInfo: 'Kom i Kontakt',
-      connectWith: 'Forbind dig for musikalske samarbejder',
+      connectWith: 'Tilgængelig for begivenheder og samarbejder',
       followMe: 'Følg Rejsen',
       allRightsReserved: 'Alle rettigheder forbeholdes',
     }
