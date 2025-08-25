@@ -41,8 +41,8 @@ const About = () => {
                   <Music2 className="text-indigo-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">Musical Intuition</h4>
-                  <p className="text-gray-600 font-light">Sensing the unspoken desires of the collective consciousness and translating them into sonic experiences</p>
+                  <h4 className="font-medium text-gray-900 mb-2">Musical Versatility</h4>
+                  <p className="text-gray-600 font-light">Seamlessly blending genres from electronic and house to classic hits, adapting to any crowd and setting</p>
                 </div>
               </div>
               
@@ -51,8 +51,8 @@ const About = () => {
                   <Palette className="text-rose-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">Artistic Vision</h4>
-                  <p className="text-gray-600 font-light">Painting with sound, creating atmospheric canvases that speak to both mind and soul</p>
+                  <h4 className="font-medium text-gray-900 mb-2">Event Experience</h4>
+                  <p className="text-gray-600 font-light">Years of experience DJing weddings, corporate events, private parties, and cultural celebrations</p>
                 </div>
               </div>
               
@@ -61,8 +61,8 @@ const About = () => {
                   <Compass className="text-emerald-600" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">Journey Guide</h4>
-                  <p className="text-gray-600 font-light">Leading listeners through carefully crafted musical narratives, from introspection to celebration</p>
+                  <h4 className="font-medium text-gray-900 mb-2">Professional Approach</h4>
+                  <p className="text-gray-600 font-light">Reliable, well-prepared, and dedicated to making every event memorable through thoughtful music curation</p>
                 </div>
               </div>
             </div>
