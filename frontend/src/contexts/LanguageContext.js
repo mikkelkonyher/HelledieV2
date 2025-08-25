@@ -22,8 +22,8 @@ export const LanguageProvider = ({ children }) => {
       links: 'Links',
       
       // Home page
-      heroTitle: 'Ole Helledie',
-      heroSubtitle: 'Sound Artist & Musical Storyteller',
+      heroTitle: 'DJ Ole Helledie',
+      heroSubtitle: 'Musical Storyteller & Event Curator',
       exploreMusic: 'Explore Music',
       discoverMore: 'Discover More',
       
