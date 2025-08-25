@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="text-2xl font-light text-gray-900 hover:text-indigo-600 transition-colors">
-            Ole Helledie
+            DJ Ole Helledie
           </Link>
 
           {/* Desktop Navigation */}
