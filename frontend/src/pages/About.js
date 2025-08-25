@@ -72,15 +72,31 @@ const About = () => {
         {/* Philosophy Section */}
         <div className="bg-gradient-to-br from-gray-50 to-indigo-50 rounded-2xl p-12 mb-16">
           <h2 className="text-3xl font-light text-gray-900 mb-8 text-center tracking-wide">
-            Artistic Philosophy
+            Music & Moments
           </h2>
           <div className="max-w-4xl mx-auto">
             <blockquote className="text-xl text-gray-700 italic font-light leading-relaxed text-center">
-              "Music is the bridge between the tangible and the transcendent. In each performance, I seek not just to entertain, but to create a sacred space where strangers become connected through shared rhythm, where time dissolves, and where the ordinary transforms into the extraordinary."
+              "Every event tells a story, and music is its most powerful narrator. My role as a DJ is to listen deeply - to the hosts, to the guests, to the energy in the room - and respond with a soundtrack that elevates the experience from ordinary to extraordinary."
             </blockquote>
             <div className="text-center mt-8">
               <div className="w-16 h-px bg-indigo-300 mx-auto"></div>
             </div>
+          </div>
+        </div>
+
+        {/* Event Types Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <h3 className="text-2xl font-light text-gray-900 mb-4 tracking-wide">Celebrations & Weddings</h3>
+            <p className="text-gray-600 font-light leading-relaxed">
+              Creating the perfect atmosphere for life's most precious moments, from ceremony elegance to reception energy.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <h3 className="text-2xl font-light text-gray-900 mb-4 tracking-wide">Corporate & Cultural Events</h3>
+            <p className="text-gray-600 font-light leading-relaxed">
+              Professional event curation for conferences, launches, exhibitions, and cultural celebrations.
+            </p>
           </div>
         </div>
 
