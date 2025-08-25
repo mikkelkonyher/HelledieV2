@@ -61,7 +61,7 @@ export const LanguageProvider = ({ children }) => {
       
       // About page
       aboutTitle: 'Om Ole',
-      aboutBio: 'Ole Helledie skaber lydrejser, der transcenderer almindelige lytteoplevelser. Gennem den delikate kunst at kuratere og mixe live musik væver han lyde sammen, der taler til sjælen. Hver optræden er en unik fortælling, født af øjeblikkets energi og de tilstedeværendes kollektive hjerteslag.',
+      aboutBio: 'DJ Ole Helledie bringer musikens kurateringskunst sammen med håndværket at læse et rum. Gennem års erfaring bag pladespillerne har han udviklet en intuitiv forståelse af, hvordan musik kan transformere rum og forbinde mennesker. Hver begivenhed bliver til en kollaborativ oplevelse, hvor publikums energi styrer den musikalske rejse fra første til sidste track.',
       
       // Gallery
       galleryTitle: 'Visuelle Fortællinger',
