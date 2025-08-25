@@ -115,20 +115,30 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-light text-gray-900 mb-8 tracking-wide">
-            Join the Journey
+            Let's Create Something Beautiful
           </h2>
           <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
-            Step into a world where music becomes meditation, where rhythm becomes ritual, and where every gathering transforms into a celebration of the human spirit through sound.
+            Whether it's an intimate gathering or a grand celebration, every event has its own musical story waiting to be told. Let's explore how we can bring yours to life.
           </p>
           
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-12 py-4 text-lg font-light transition-all duration-300 hover:scale-105 rounded-full"
             >
-              <Link to="/about" className="flex items-center">
-                Discover the Story
+              <a href="mailto:ole@olehelledie.dk" className="flex items-center">
+                Get in Touch
                 <ArrowRight className="ml-3" size={20} />
+              </a>
+            </Button>
+            
+            <Button
+              asChild
+              variant="outline"
+              className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-50 px-12 py-4 text-lg font-light transition-all duration-300 rounded-full"
+            >
+              <Link to="/about" className="flex items-center">
+                Learn More About Ole
               </Link>
             </Button>
           </div>
