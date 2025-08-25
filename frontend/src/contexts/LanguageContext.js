@@ -42,7 +42,7 @@ export const LanguageProvider = ({ children }) => {
       
       // Footer
       contactInfo: 'Get in Touch',
-      connectWith: 'Connect for musical collaborations',
+      connectWith: 'Available for events and collaborations',
       followMe: 'Follow the Journey',
       allRightsReserved: 'All rights reserved',
     },
