@@ -54,8 +54,8 @@ export const LanguageProvider = ({ children }) => {
       links: 'Links',
       
       // Home page
-      heroTitle: 'Ole Helledie',
-      heroSubtitle: 'Lydkunstner & Musikalsk Fortæller',
+      heroTitle: 'DJ Ole Helledie',
+      heroSubtitle: 'Musikalsk Fortæller & Event Kurator',
       exploreMusic: 'Udforsk Musik',
       discoverMore: 'Oplev Mere',
       
