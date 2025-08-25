@@ -57,7 +57,7 @@ const Footer = () => {
               })}
             </div>
             <p className="text-gray-400 font-light text-sm">
-              Connect and explore the musical journey together
+              Connect with me to explore how we can make your event special
             </p>
           </div>
         </div>
