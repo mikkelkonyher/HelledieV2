@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -13,35 +13,34 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold">DJ Ole Helledie</h3>
-            <p className="text-gray-300 text-sm">
-              Professional DJ & Music Producer
+          <div className="space-y-6">
+            <h3 className="text-3xl font-light tracking-wider">Ole Helledie</h3>
+            <p className="text-gray-300 font-light text-lg leading-relaxed">
+              Sound Artist & Musical Storyteller
+            </p>
+            <p className="text-gray-400 font-light text-sm leading-relaxed">
+              Creating sonic journeys that transcend the ordinary and touch the soul.
             </p>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">{t('contactInfo')}</h4>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-gray-300">
-                <Mail size={16} />
-                <span className="text-sm">ole@djolehelledie.dk</span>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-300">
-                <Phone size={16} />
-                <span className="text-sm">+45 12 34 56 78</span>
+          <div className="space-y-6">
+            <h4 className="text-xl font-light tracking-wide">{t('contactInfo')}</h4>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Mail size={18} />
+                <span className="font-light">ole@olehelledie.dk</span>
               </div>
             </div>
-            <p className="text-gray-400 text-xs">{t('bookingInquiries')}</p>
+            <p className="text-gray-400 font-light text-sm">{t('connectWith')}</p>
           </div>
 
           {/* Social Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">{t('followMe')}</h4>
+          <div className="space-y-6">
+            <h4 className="text-xl font-light tracking-wide">{t('followMe')}</h4>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
@@ -49,21 +48,31 @@ const Footer = () => {
                   <a
                     key={social.label}
                     href={social.href}
-                    className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-gray-800"
+                    className="text-gray-400 hover:text-white transition-colors p-3 rounded-full hover:bg-gray-800 group"
                     aria-label={social.label}
                   >
-                    <Icon size={20} />
+                    <Icon size={22} className="group-hover:scale-110 transition-transform duration-200" />
                   </a>
                 );
               })}
             </div>
+            <p className="text-gray-400 font-light text-sm">
+              Connect and explore the musical journey together
+            </p>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 DJ Ole Helledie. {t('allRightsReserved')}.
-          </p>
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <p className="text-gray-400 font-light text-sm">
+              © 2024 Ole Helledie. {t('allRightsReserved')}.
+            </p>
+            <div className="flex items-center space-x-2 text-gray-400 font-light text-sm">
+              <span>Made with</span>
+              <Heart size={14} className="text-rose-400" />
+              <span>for music lovers everywhere</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

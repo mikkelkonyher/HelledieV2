@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/ui/button';
-import { ArrowRight, Music2, Award, Heart } from 'lucide-react';
+import { Mail, Music2, Palette, Compass } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -10,75 +10,97 @@ const About = () => {
     <div className="min-h-screen py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-20">
+          <h1 className="text-5xl font-light text-gray-900 mb-8 tracking-wider">
             {t('aboutTitle')}
           </h1>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-24 h-px bg-indigo-400 mx-auto"></div>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Image */}
-          <div className="relative">
+          <div className="relative group">
             <img
               src="https://images.unsplash.com/photo-1692176548571-86138128e36c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85"
-              alt="DJ Ole Helledie"
-              className="rounded-lg shadow-2xl w-full"
+              alt="Ole Helledie"
+              className="rounded-lg shadow-2xl w-full transform transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-lg shadow-xl">
-              <div className="text-center">
-                <div className="text-3xl font-bold">10+</div>
-                <div className="text-sm">Years Experience</div>
-              </div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
           </div>
 
           {/* Content */}
-          <div className="space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed">
+          <div className="space-y-8">
+            <p className="text-lg text-gray-700 leading-relaxed font-light">
               {t('aboutBio')}
             </p>
             
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Music2 className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-gradient-to-br from-indigo-100 to-purple-100 p-3 rounded-full">
+                  <Music2 className="text-indigo-600" size={24} />
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Musical Versatility</h4>
-                  <p className="text-gray-600">From electronic beats to classic hits, adapting to any audience and venue</p>
+                  <h4 className="font-medium text-gray-900 mb-2">Musical Intuition</h4>
+                  <p className="text-gray-600 font-light">Sensing the unspoken desires of the collective consciousness and translating them into sonic experiences</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <Award className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+              <div className="flex items-start space-x-4">
+                <div className="bg-gradient-to-br from-rose-100 to-pink-100 p-3 rounded-full">
+                  <Palette className="text-rose-600" size={24} />
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Professional Excellence</h4>
-                  <p className="text-gray-600">Committed to delivering high-quality performances with reliable service</p>
+                  <h4 className="font-medium text-gray-900 mb-2">Artistic Vision</h4>
+                  <p className="text-gray-600 font-light">Painting with sound, creating atmospheric canvases that speak to both mind and soul</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <Heart className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+              <div className="flex items-start space-x-4">
+                <div className="bg-gradient-to-br from-emerald-100 to-teal-100 p-3 rounded-full">
+                  <Compass className="text-emerald-600" size={24} />
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Passion for Music</h4>
-                  <p className="text-gray-600">Genuine love for music that translates into memorable experiences</p>
+                  <h4 className="font-medium text-gray-900 mb-2">Journey Guide</h4>
+                  <p className="text-gray-600 font-light">Leading listeners through carefully crafted musical narratives, from introspection to celebration</p>
                 </div>
               </div>
-            </div>
-
-            <div className="pt-6">
-              <Button
-                asChild
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105"
-              >
-                <a href="#booking" className="flex items-center">
-                  {t('bookNow')}
-                  <ArrowRight className="ml-2" size={20} />
-                </a>
-              </Button>
             </div>
           </div>
+        </div>
+
+        {/* Philosophy Section */}
+        <div className="bg-gradient-to-br from-gray-50 to-indigo-50 rounded-2xl p-12 mb-16">
+          <h2 className="text-3xl font-light text-gray-900 mb-8 text-center tracking-wide">
+            Artistic Philosophy
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <blockquote className="text-xl text-gray-700 italic font-light leading-relaxed text-center">
+              "Music is the bridge between the tangible and the transcendent. In each performance, I seek not just to entertain, but to create a sacred space where strangers become connected through shared rhythm, where time dissolves, and where the ordinary transforms into the extraordinary."
+            </blockquote>
+            <div className="text-center mt-8">
+              <div className="w-16 h-px bg-indigo-300 mx-auto"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="text-center">
+          <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
+            Connect & Collaborate
+          </h3>
+          <p className="text-gray-600 mb-8 font-light max-w-2xl mx-auto">
+            Interested in creating something beautiful together? Let's explore the possibilities of sound and space.
+          </p>
+          <Button
+            asChild
+            className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-light transition-all duration-300 hover:scale-105 rounded-full"
+          >
+            <a href="mailto:ole@djolehelledie.dk" className="flex items-center">
+              <Mail className="mr-3" size={20} />
+              Get in Touch
+            </a>
+          </Button>
         </div>
       </div>
     </div>
