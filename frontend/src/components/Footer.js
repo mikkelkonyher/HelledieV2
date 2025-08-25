@@ -17,12 +17,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="space-y-6">
-            <h3 className="text-3xl font-light tracking-wider">Ole Helledie</h3>
+            <h3 className="text-3xl font-light tracking-wider">DJ Ole Helledie</h3>
             <p className="text-gray-300 font-light text-lg leading-relaxed">
-              Sound Artist & Musical Storyteller
+              Musical Storyteller & Event Curator
             </p>
             <p className="text-gray-400 font-light text-sm leading-relaxed">
-              Creating sonic journeys that transcend the ordinary and touch the soul.
+              Creating memorable experiences through thoughtful music curation and professional event DJing.
             </p>
           </div>
 
