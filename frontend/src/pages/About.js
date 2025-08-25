@@ -103,16 +103,16 @@ const About = () => {
         {/* Contact Section */}
         <div className="text-center">
           <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
-            Connect & Collaborate
+            Let's Create Your Event's Soundtrack
           </h3>
           <p className="text-gray-600 mb-8 font-light max-w-2xl mx-auto">
-            Interested in creating something beautiful together? Let's explore the possibilities of sound and space.
+            Available for events throughout Denmark and beyond. Let's discuss how we can make your celebration unforgettable.
           </p>
           <Button
             asChild
             className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-light transition-all duration-300 hover:scale-105 rounded-full"
           >
-            <a href="mailto:ole@djolehelledie.dk" className="flex items-center">
+            <a href="mailto:ole@olehelledie.dk" className="flex items-center">
               <Mail className="mr-3" size={20} />
               Get in Touch
             </a>
