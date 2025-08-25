@@ -22,28 +22,28 @@ export const LanguageProvider = ({ children }) => {
       links: 'Links',
       
       // Home page
-      heroTitle: 'DJ Ole Helledie',
-      heroSubtitle: 'Professional DJ & Music Producer',
-      bookNow: 'Book Now',
-      learnMore: 'Learn More',
+      heroTitle: 'Ole Helledie',
+      heroSubtitle: 'Sound Artist & Musical Storyteller',
+      exploreMusic: 'Explore Music',
+      discoverMore: 'Discover More',
       
       // About page
       aboutTitle: 'About Ole',
-      aboutBio: 'Ole Helledie is a passionate DJ and music producer with years of experience in creating unforgettable musical experiences. Known for his unique style and ability to read the crowd, Ole brings energy and professionalism to every event. From intimate gatherings to large-scale celebrations, he crafts the perfect soundtrack for any occasion.',
+      aboutBio: 'Ole Helledie crafts sonic journeys that transcend ordinary listening experiences. Through the delicate art of musical curation and live mixing, he weaves together sounds that speak to the soul. Each performance is a unique narrative, born from the energy of the moment and the collective heartbeat of those present.',
       
       // Gallery
-      galleryTitle: 'Gallery',
-      gallerySubtitle: 'Moments from performances and events',
+      galleryTitle: 'Visual Stories',
+      gallerySubtitle: 'Moments captured in light and sound',
       
       // Links
-      linksTitle: 'Family & Friends',
+      linksTitle: 'Artistic Circle',
       motherArt: 'Mother\'s Art Gallery',
-      daughterDj: 'Daughter\'s DJ Page',
+      daughterDj: 'Daughter\'s Musical Journey',
       
       // Footer
-      contactInfo: 'Contact Information',
-      bookingInquiries: 'For booking inquiries',
-      followMe: 'Follow Me',
+      contactInfo: 'Get in Touch',
+      connectWith: 'Connect for musical collaborations',
+      followMe: 'Follow the Journey',
       allRightsReserved: 'All rights reserved',
     },
     da: {
@@ -54,28 +54,28 @@ export const LanguageProvider = ({ children }) => {
       links: 'Links',
       
       // Home page
-      heroTitle: 'DJ Ole Helledie',
-      heroSubtitle: 'Professionel DJ & Musikproducent',
-      bookNow: 'Book Nu',
-      learnMore: 'Læs Mere',
+      heroTitle: 'Ole Helledie',
+      heroSubtitle: 'Lydkunstner & Musikalsk Fortæller',
+      exploreMusic: 'Udforsk Musik',
+      discoverMore: 'Oplev Mere',
       
       // About page
       aboutTitle: 'Om Ole',
-      aboutBio: 'Ole Helledie er en passioneret DJ og musikproducent med års erfaring i at skabe uforglemmelige musikalske oplevelser. Kendt for sin unikke stil og evne til at læse publikum, bringer Ole energi og professionalisme til enhver begivenhed. Fra intime sammenkomster til store fester skaber han det perfekte soundtrack til enhver lejlighed.',
+      aboutBio: 'Ole Helledie skaber lydrejser, der transcenderer almindelige lytteoplevelser. Gennem den delikate kunst at kuratere og mixe live musik væver han lyde sammen, der taler til sjælen. Hver optræden er en unik fortælling, født af øjeblikkets energi og de tilstedeværendes kollektive hjerteslag.',
       
       // Gallery
-      galleryTitle: 'Galleri',
-      gallerySubtitle: 'Øjeblikke fra koncerter og begivenheder',
+      galleryTitle: 'Visuelle Fortællinger',
+      gallerySubtitle: 'Øjeblikke fanget i lys og lyd',
       
       // Links
-      linksTitle: 'Familie & Venner',
+      linksTitle: 'Kunstnerisk Kreds',
       motherArt: 'Mors Kunstgalleri',
-      daughterDj: 'Datterens DJ Side',
+      daughterDj: 'Datterens Musikalske Rejse',
       
       // Footer
-      contactInfo: 'Kontaktinformation',
-      bookingInquiries: 'For booking forespørgsler',
-      followMe: 'Følg Mig',
+      contactInfo: 'Kom i Kontakt',
+      connectWith: 'Forbind dig for musikalske samarbejder',
+      followMe: 'Følg Rejsen',
       allRightsReserved: 'Alle rettigheder forbeholdes',
     }
   };
