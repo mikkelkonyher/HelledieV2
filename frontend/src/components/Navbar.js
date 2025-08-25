@@ -82,9 +82,9 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-blue-600 hover:bg-gray-50 rounded-md ${
+                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-indigo-600 hover:bg-gray-50 rounded-md ${
                     location.pathname === item.path
-                      ? 'text-blue-600 bg-blue-50'
+                      ? 'text-indigo-600 bg-indigo-50'
                       : 'text-gray-700'
                   }`}
                 >
