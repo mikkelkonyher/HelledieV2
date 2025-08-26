@@ -11,7 +11,7 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('da');
 
   const translations = {
     en: {
@@ -89,6 +89,9 @@ export const LanguageProvider = ({ children }) => {
       connectWith: 'Available for events and collaborations',
       followMe: 'Follow the Journey',
       allRightsReserved: 'All rights reserved',
+      brandTagline: 'DJ & Event Curator',
+      brandDescription: 'Creating memorable experiences through thoughtful music curation and professional event DJing.',
+      connectExplore: 'Connect with me to explore how we can make your event special',
     },
     da: {
       // Navigation
@@ -165,6 +168,9 @@ export const LanguageProvider = ({ children }) => {
       connectWith: 'Tilgængelig for begivenheder og samarbejder',
       followMe: 'Følg Rejsen',
       allRightsReserved: 'Alle rettigheder forbeholdes',
+      brandTagline: 'DJ & Eventkurator',
+      brandDescription: 'Skaber mindeværdige oplevelser gennem omtænksom musikkuratering og professionel event-DJing.',
+      connectExplore: 'Tag kontakt for at udforske, hvordan vi kan gøre dit event helt særligt',
     }
   };
 

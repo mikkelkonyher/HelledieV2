@@ -11,7 +11,7 @@ const Links = () => {
       id: 1,
       title: t('motherArt'),
       description: t('motherArtDesc'),
-      url: '#',
+      url: 'https://lene.helledie.dk/',
       icon: Palette,
       gradient: 'from-rose-400 to-pink-500'
     },

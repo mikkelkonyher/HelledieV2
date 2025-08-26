@@ -19,10 +19,10 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-3xl font-light tracking-wider">DJ Ole Helledie</h3>
             <p className="text-gray-300 font-light text-lg leading-relaxed">
-              Musical Storyteller & Event Curator
+              {t('brandTagline')}
             </p>
             <p className="text-gray-400 font-light text-sm leading-relaxed">
-              Creating memorable experiences through thoughtful music curation and professional event DJing.
+              {t('brandDescription')}
             </p>
           </div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
               })}
             </div>
             <p className="text-gray-400 font-light text-sm">
-              Connect with me to explore how we can make your event special
+              {t('connectExplore')}
             </p>
           </div>
         </div>
