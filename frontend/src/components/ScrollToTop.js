@@ -7,7 +7,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     // Use 'auto' for instant jump; change to 'smooth' if smooth scrolling is desired
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [pathname]);
 
   return null;
