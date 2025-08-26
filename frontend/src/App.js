@@ -8,12 +8,14 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Links from "./pages/Links";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <LanguageProvider>
       <div className="App min-h-screen bg-gray-50">
         <BrowserRouter>
+          <ScrollToTop />
           <Navbar />
           <main>
             <Routes>
