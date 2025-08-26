@@ -10,7 +10,7 @@ const Links = () => {
     {
       id: 1,
       title: t('motherArt'),
-      description: 'A lifetime dedicated to visual storytelling and creative expression',
+      description: t('motherArtDesc'),
       url: '#',
       icon: Palette,
       gradient: 'from-rose-400 to-pink-500'
@@ -18,7 +18,7 @@ const Links = () => {
     {
       id: 2,
       title: t('daughterDj'),
-      description: 'The evolution continues with fresh perspectives and boundless creativity',
+      description: t('daughterDjDesc'),
       url: '#',
       icon: Music,
       gradient: 'from-indigo-400 to-purple-500'
@@ -34,7 +34,7 @@ const Links = () => {
             {t('linksTitle')}
           </h1>
           <p className="text-xl text-gray-600 font-light">
-            Creativity flows through generations, connecting us in beautiful ways
+            {t('artConnectsBody')}
           </p>
           <div className="w-24 h-px bg-indigo-400 mx-auto mt-8"></div>
         </div>
@@ -74,7 +74,7 @@ const Links = () => {
                         rel="noopener noreferrer"
                         className="flex items-center space-x-3"
                       >
-                        <span className="font-light">Explore</span>
+                        <span className="font-light">{t('explore')}</span>
                         <ExternalLink size={18} />
                       </a>
                     </Button>
@@ -89,10 +89,10 @@ const Links = () => {
         {/* Artistic Statement */}
         <div className="bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg p-12 text-center border border-white/50">
           <h2 className="text-3xl font-light text-gray-900 mb-6 tracking-wide">
-            Art Connects Us All
+            {t('artConnectsTitle')}
           </h2>
           <p className="text-gray-600 font-light text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
-            In our family, creativity is the common thread that weaves through generations. Each of us expresses the same universal truths through different mediums - visual art, musical landscapes, and sonic storytelling.
+            {t('artConnectsBody')}
           </p>
           <div className="w-16 h-px bg-indigo-300 mx-auto"></div>
         </div>

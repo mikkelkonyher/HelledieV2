@@ -14,7 +14,7 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85"
+            src="/assets/photo-1470225620780-dba8ba36b745.jpeg"
             alt="DJ Ole Helledie"
             className="w-full h-full object-cover"
           />
@@ -36,7 +36,7 @@ const Home = () => {
               className="bg-white/20 backdrop-blur-sm hover:bg-white/30 border-2 border-white/50 text-white px-8 py-4 text-lg font-light transition-all duration-300"
             >
               <a href="mailto:ole@olehelledie.dk" className="flex items-center">
-                Get in Touch
+                {t('getInTouch')}
                 <ArrowRight className="ml-2" size={20} />
               </a>
             </Button>
@@ -60,11 +60,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light text-gray-900 mb-6 tracking-wide">
-              Creating Musical Experiences
+              {t('servicesTitle')}
             </h2>
             <div className="w-24 h-px bg-indigo-400 mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
-              From intimate celebrations to grand gatherings, every event deserves a soundtrack that reflects its unique spirit
+              {t('servicesSubtitle')}
             </p>
           </div>
 
@@ -74,10 +74,10 @@ const Home = () => {
                 <Music className="text-indigo-600" size={36} />
               </div>
               <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
-                Event Curation
+                {t('eventCurationTitle')}
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Crafting the perfect atmosphere for weddings, corporate events, private parties, and cultural celebrations
+                {t('eventCurationBody')}
               </p>
             </div>
 
@@ -86,10 +86,10 @@ const Home = () => {
                 <Users className="text-rose-600" size={36} />
               </div>
               <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
-                Crowd Reading
+                {t('crowdReadingTitle')}
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Reading the room's energy and responding with music that moves both body and soul, creating shared moments
+                {t('crowdReadingBody')}
               </p>
             </div>
 
@@ -98,10 +98,10 @@ const Home = () => {
                 <Calendar className="text-emerald-600" size={36} />
               </div>
               <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-wide">
-                Professional Service
+                {t('professionalServiceTitle')}
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Reliable, well-prepared, and dedicated to making every event memorable through thoughtful music curation
+                {t('professionalServiceBody')}
               </p>
             </div>
           </div>
@@ -114,17 +114,17 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-96">
               <img
-                src="https://images.unsplash.com/photo-1578185544327-68fca190b2da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMHBlcmZvcm1hbmNlfGVufDB8fHx8MTc1NjEzMDQ5N3ww&ixlib=rb-4.1.0&q=85"
+                src="/assets/IMG_9424.JPG"
                 alt="DJ Performance"
                 className="w-full h-full object-cover rounded-lg shadow-xl"
               />
             </div>
             <div className="space-y-8">
               <h2 className="text-4xl font-light text-gray-900 tracking-wide">
-                Every Event Has Its Story
+                {t('splitEveryEventTitle')}
               </h2>
               <p className="text-xl text-gray-600 font-light leading-relaxed">
-                DJ Ole Helledie brings together the art of musical curation with the craft of reading a room. Through years of experience behind the decks, he has developed an intuitive understanding of how music can transform spaces and connect people.
+                {t('splitEveryEventBody')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -132,7 +132,7 @@ const Home = () => {
                   className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-light transition-all duration-300 hover:scale-105 rounded-full"
                 >
                   <a href="mailto:ole@olehelledie.dk" className="flex items-center">
-                    Get in Touch
+                    {t('getInTouch')}
                     <ArrowRight className="ml-3" size={20} />
                   </a>
                 </Button>
@@ -143,7 +143,7 @@ const Home = () => {
                   className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-50 px-8 py-3 text-lg font-light transition-all duration-300 rounded-full"
                 >
                   <Link to="/about" className="flex items-center">
-                    Learn More
+                    {t('learnMore')}
                   </Link>
                 </Button>
               </div>

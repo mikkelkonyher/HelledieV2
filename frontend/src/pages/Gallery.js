@@ -9,39 +9,39 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
-      alt: "Professional Setup",
-      caption: "Professional DJ Setup"
+      src: "/assets/Gallery/75ED4A23-76CE-42AE-A79F-B18C40953872.JPG",
+      alt: t('gallery1Alt'),
+      caption: t('gallery1Caption')
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1578185544327-68fca190b2da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMHBlcmZvcm1hbmNlfGVufDB8fHx8MTc1NjEzMDQ5N3ww&ixlib=rb-4.1.0&q=85",
-      alt: "Live Performance",
-      caption: "Live Performance"
+      src: "/assets/Gallery/4D3EB273-366E-4834-B3FF-DAB6244F9D5C.JPG",
+      alt: t('gallery2Alt'),
+      caption: t('gallery2Caption')
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1698153763051-06fcad199e24?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxESiUyMHBlcmZvcm1hbmNlfGVufDB8fHx8MTc1NjEzMDQ5N3ww&ixlib=rb-4.1.0&q=85",
-      alt: "Event Atmosphere",
-      caption: "Creating Atmosphere"
+      src: "/assets/Gallery/2FC41756-2B41-4AE7-ABBD-2757B20E57E8.JPG",
+      alt: t('gallery3Alt'),
+      caption: t('gallery3Caption')
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1692176548571-86138128e36c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
-      alt: "Intimate Setting",
-      caption: "Intimate Moments"
+      src: "/assets/Gallery/4A6EEF8A-56D8-415B-B7B9-95AF9268A07E.JPG",
+      alt: t('gallery4Alt'),
+      caption: t('gallery4Caption')
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1640509724989-d8793574d307?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxtdXNpYyUyMGF0bW9zcGhlcmV8ZW58MHx8fHwxNzU2MTMwNTA0fDA&ixlib=rb-4.1.0&q=85",
-      alt: "Outdoor Event",
-      caption: "Outdoor Events"
+      src: "/assets/Gallery/480952256_3076331369171649_5175806130906190233_n.jpg",
+      alt: t('gallery5Alt'),
+      caption: t('gallery5Caption')
     },
     {
       id: 6,
       src: "https://images.unsplash.com/photo-1569235604186-2594d69668ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxtdXNpYyUyMGF0bW9zcGhlcmV8ZW58MHx8fHwxNzU2MTI3ODI4fDA&ixlib=rb-4.1.0&q=85",
-      alt: "DJ Equipment",
-      caption: "The Craft"
+      alt: t('gallery6Alt'),
+      caption: t('gallery6Caption')
     }
   ];
 

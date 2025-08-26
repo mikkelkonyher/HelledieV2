@@ -21,8 +21,8 @@ export const mockData = {
       src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxESiUyMG11c2ljfGVufDB8fHx8MTc1NjEyNzgyMnww&ixlib=rb-4.1.0&q=85",
       alt: "Professional Setup",
       caption: {
-        en: "Professional DJ Setup",
-        da: "Professionelt DJ Setup"
+        en: "Hanging out with friends",
+        da: "I gode venners selskab"
       }
     },
     {
@@ -86,14 +86,14 @@ export const mockData = {
     {
       id: 1,
       title: {
-        en: "Mother's Art Gallery",
-        da: "Mors Kunstgalleri"
+        en: "Lene Helledie Art",
+        da: "Lene Helledie Kunst"
       },
       description: {
         en: "A lifetime dedicated to visual storytelling and creative expression",
         da: "Et liv dedikeret til visuel fortælling og kreativt udtryk"
       },
-      url: "https://artgallery-placeholder.com"
+      url: "https://lene.helledie.dk/"
     },
     {
       id: 2,
