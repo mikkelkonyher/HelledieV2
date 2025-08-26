@@ -19,10 +19,10 @@ const Navbar = () => {
   return (
     <nav className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-light text-gray-900 hover:text-indigo-600 transition-colors">
-            DJ Ole Helledie
+          <Link to="/" className="flex items-center">
+            <img src="/assets/Gallery/DJ%20HELLEDIE.jpg" alt="DJ Ole Helledie" className="h-16 md:h-30 lg:h-24 w-auto rounded" />
           </Link>
 
           {/* Desktop Navigation */}
