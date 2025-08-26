@@ -23,7 +23,7 @@ const About = () => {
           {/* Image */}
           <div className="relative">
             <img
-              src="/assets/EE635408-773B-41CB-B65C-89A3152B84CF.JPG"
+              src="/assets/5C16FEF3-188C-404E-AF0F-C4B067D5578D.JPG"
               alt="DJ Ole Helledie"
               className="rounded-lg shadow-2xl w-full h-120 object-cover"
             />

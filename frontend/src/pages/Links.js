@@ -20,7 +20,7 @@ const Links = () => {
             title: t('daughterDj'),
             description: t('daughterDjDesc'),
             url: '#',
-            image: '/assets/512660630_3205996552871796_6625151268719653918_n.jpg', // Update with your image path
+            image: '/assets/0A5642A0-EF4A-4EFC-86DE-6EBA41B07EA8.JPG', // Update with your image path
             gradient: 'from-indigo-400 to-purple-500'
         }
     ];
