@@ -35,7 +35,7 @@ const Home = () => {
               asChild
               className="bg-white/20 backdrop-blur-sm hover:bg-white/30 border-2 border-white/50 text-white px-8 py-4 text-lg font-light transition-all duration-300"
             >
-              <a href="mailto:ole@olehelledie.dk" className="flex items-center">
+              <a href="mailto:DJ@helledie.dk" className="flex items-center">
                 {t('getInTouch')}
                 <ArrowRight className="ml-2" size={20} />
               </a>
@@ -131,7 +131,7 @@ const Home = () => {
                   asChild
                   className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-light transition-all duration-300 hover:scale-105 rounded-full"
                 >
-                  <a href="mailto:ole@olehelledie.dk" className="flex items-center">
+                  <a href="mailto:DJ@helledie.dk" className="flex items-center">
                     {t('getInTouch')}
                     <ArrowRight className="ml-3" size={20} />
                   </a>

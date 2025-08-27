@@ -6,9 +6,9 @@ const Footer = () => {
   const { t } = useLanguage();
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Facebook, href: 'https://www.linkedin.com/in/helledie/', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/ole_helledie/', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/helledie/', label: 'LinkedIn' },
   ];
 
   return (
@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-300">
                 <Mail size={18} />
-                <span className="font-light">ole@olehelledie.dk</span>
+                <span className="font-light">DJ@helledie.dk</span>
               </div>
             </div>
             <p className="text-gray-400 font-light text-sm">{t('connectWith')}</p>
@@ -48,6 +48,8 @@ const Footer = () => {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors p-3 rounded-full hover:bg-gray-800 group"
                     aria-label={social.label}
                   >

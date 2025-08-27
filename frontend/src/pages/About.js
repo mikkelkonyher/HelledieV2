@@ -113,7 +113,7 @@ const About = () => {
               asChild
               className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-light transition-all duration-300 hover:scale-105 rounded-full"
             >
-              <a href="mailto:ole@olehelledie.dk" className="flex items-center">
+              <a href="mailto:DJ@helledie.dk" className="flex items-center">
                 <Mail className="mr-3" size={20} />
                 {t('getInTouch')}
               </a>

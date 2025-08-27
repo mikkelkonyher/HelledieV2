@@ -74,7 +74,7 @@ export const mockData = {
 
   // Contact information
   contact: {
-    email: "ole@olehelledie.dk",
+    email: "DJ@helledie.dk",
     availability: {
       en: "Available for events throughout Denmark and beyond",
       da: "Tilgængelig for begivenheder i hele Danmark og derude"
@@ -111,9 +111,9 @@ export const mockData = {
 
   // Social media links
   socialMedia: {
-    facebook: "https://facebook.com/djolehelledie",
-    instagram: "https://instagram.com/djolehelledie", 
-    linkedin: "https://linkedin.com/in/olehelledie"
+    facebook: "https://www.facebook.com/dj.helledie/",
+    instagram: "https://www.instagram.com/ole_helledie/",
+    linkedin: "https://www.linkedin.com/in/helledie/"
   }
 };
 
