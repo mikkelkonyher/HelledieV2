@@ -9,7 +9,7 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/assets/Gallery/C86B17F5-D2BF-4D3D-B67F-7EEF79CFC1D2.JPG",
+      src: "/assets/Gallery/8B972D8E-A54A-4AC7-93FE-09E75E0BFB4A.JPG",
       alt: t('gallery1Alt'),
       caption: t('gallery1Caption')
     },
@@ -21,13 +21,13 @@ const Gallery = () => {
     },
     {
       id: 3,
-      src: "/assets/Gallery/2FC41756-2B41-4AE7-ABBD-2757B20E57E8.JPG",
+      src: "/assets/Gallery/2E4061A5-49BD-4A07-98EE-35AFEEF087B6.JPG",
       alt: t('gallery3Alt'),
       caption: t('gallery3Caption')
     },
     {
       id: 4,
-      src: "/assets/Gallery/8B972D8E-A54A-4AC7-93FE-09E75E0BFB4A.JPG",
+      src: "/assets/Gallery/C015FD34-A517-4360-88CA-14AFDC645D3B.JPG",
       alt: t('gallery4Alt'),
       caption: t('gallery4Caption')
     },
