@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center mt-2">
             <img src="/assets/fritlagtLogo.png" alt="DJ Ole Helledie" className="h-16 md:h-35 lg:h-28 w-auto rounded" />
           </Link>
 
