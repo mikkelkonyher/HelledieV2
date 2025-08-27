@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/assets/Gallery/DJ%20HELLEDIE.jpg" alt="DJ Ole Helledie" className="h-16 md:h-30 lg:h-24 w-auto rounded" />
+            <img src="/assets/fritlagtLogo.png" alt="DJ Ole Helledie" className="h-16 md:h-35 lg:h-28 w-auto rounded" />
           </Link>
 
           {/* Desktop Navigation */}
