@@ -19,8 +19,8 @@ const Links = () => {
             id: 2,
             title: t('daughterDj'),
             description: t('daughterDjDesc'),
-            url: '#',
-            image: '/assets/0A5642A0-EF4A-4EFC-86DE-6EBA41B07EA8.JPG', // Update with your image path
+            url: 'https://www.instagram.com/sofiahelledie/',
+            image: '/assets/att.yhogDD6hSkbs-ts-oseQS2j_EueuSD5KkoIsNHbbY-I.jpg', // Update with your image path
             gradient: 'from-indigo-400 to-purple-500'
         }
     ];

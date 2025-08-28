@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useLanguage();
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://www.linkedin.com/in/helledie/', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/dj.helledie/', label: 'Facebook' },
     { icon: Instagram, href: 'https://www.instagram.com/ole_helledie/', label: 'Instagram' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/helledie/', label: 'LinkedIn' },
   ];
