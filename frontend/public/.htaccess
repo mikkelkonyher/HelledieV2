@@ -1,9 +1,8 @@
+Options -Indexes
+DirectoryIndex index.html
+
 RewriteEngine On
 RewriteBase /
-
-# --- redirect fra www til non-www ---
-RewriteCond %{HTTP_HOST} ^www\.helledie\.dk$ [NC]
-RewriteRule ^(.*)$ https://helledie.dk/$1 [L,R=301]
 
 # --- React SPA fallback ---
 RewriteRule ^index\.html$ - [L]
