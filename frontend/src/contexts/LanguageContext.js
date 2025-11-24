@@ -41,13 +41,14 @@ export const LanguageProvider = ({ children }) => {
       
       // About page
       aboutTitle: 'About Ole',
-      aboutBio: 'DJ Ole Helledie brings together the art of musical curation with the craft of reading a room. Through years of experience behind the decks, he has developed an intuitive understanding of how music can transform spaces and connect people. Each event becomes a collaborative experience, where the energy of the crowd guides the musical journey from the first track to the last.',
-      musicalVersatilityTitle: 'Musical Versatility',
-      musicalVersatilityBody: 'Seamlessly blending genres from electronic and house to classic hits, adapting to any crowd and setting',
+      aboutBio: 'I am a DJ with many years of experience from corporate parties, weddings and private events. My focus is simple: to help create the best possible celebration. I play dance friendly pop, funk, soul, disco and the hits that get people on the floor and in a great mood.\n' +
+          'I read the room and the crowd, adjust the music along the way and make sure the energy builds throughout the night. It is about good vibes, timing and giving guests an experience they will remember.',
+      musicalVersatilityTitle: 'Musical style',
+      musicalVersatilityBody: 'Pop, funk, soul, disco and dance hits tailored to the crowd and the mood of the night.',
       eventExperienceTitle: 'Event Experience',
-      eventExperienceBody: 'Years of experience DJing weddings, corporate events, private parties, and cultural celebrations',
+      eventExperienceBody: 'Experience from events of all sizes: weddings, corporate parties, birthdays, receptions and larger gatherings.',
       professionalApproachTitle: 'Professional Approach',
-      professionalApproachBody: 'Reliable, well-prepared, and dedicated to making every event memorable through thoughtful music curation',
+      professionalApproachBody: 'Easy to work with, always prepared and fully focused on giving hosts and guests a great, stress free experience.',
       musicAndMomentsTitle: 'Music & Moments',
       musicAndMomentsQuote: 'Every event tells a story, and music is its most powerful narrator. My role as a DJ is to listen deeply - to the hosts, to the guests, to the energy in the room - and respond with a soundtrack that elevates the experience from ordinary to extraordinary.',
       celebrationsWeddingsTitle: 'Celebrations & Weddings',
@@ -120,13 +121,14 @@ export const LanguageProvider = ({ children }) => {
       
       // About page
       aboutTitle: 'Om Ole',
-      aboutBio: 'DJ Ole Helledie bringer musikens kurateringskunst sammen med håndværket at læse et rum. Gennem års erfaring bag pladespillerne har han udviklet en intuitiv forståelse af, hvordan musik kan transformere rum og forbinde mennesker. Hver begivenhed bliver til en kollaborativ oplevelse, hvor publikums energi styrer den musikalske rejse fra første til sidste track.',
-      musicalVersatilityTitle: 'Musikalsk alsidighed',
-      musicalVersatilityBody: 'Sømløst at blande genrer fra elektronisk og house til klassiske hits – tilpasset ethvert publikum og enhver ramme',
+      aboutBio: 'Jeg er DJ med mange års erfaring fra firmafester, bryllupper og private arrangementer. Mit fokus er enkelt: at hjælpe med at skabe den bedst mulige fest. Jeg spiller dansevenlig pop, funk, soul, disco og de hits, der får folk ud på gulvet og i godt humør.\n' +
+          'Jeg læser rummet og publikum, tilpasser musikken undervejs og sørger for, at energien bygger sig op gennem aftenen. Det handler om god stemning, timing og at give gæsterne en oplevelse, de husker.',
+      musicalVersatilityTitle: 'Musikalsk stil',
+      musicalVersatilityBody: 'Pop, funk, soul, disco og dansehits – tilpasset publikum og stemningen på aftenen.',
       eventExperienceTitle: 'Eventerfaring',
-      eventExperienceBody: 'Års erfaring med at DJ’e til bryllupper, firmaevents, private fester og kulturelle begivenheder',
+      eventExperienceBody: 'Erfaring fra store og små events: bryllupper, firmafester, fødselsdage, receptioner og større arrangementer.',
       professionalApproachTitle: 'Professionel tilgang',
-      professionalApproachBody: 'Pålidelig, velforberedt og dedikeret til at gøre hvert event mindeværdigt gennem omtænksom musikalsk kuratering',
+      professionalApproachBody: 'Nem at arbejde med, altid forberedt og med fuldt fokus på, at værter og gæster får en god oplevelse uden stress.',
       musicAndMomentsTitle: 'Musik & øjeblikke',
       musicAndMomentsQuote: 'Hver begivenhed fortæller en historie, og musikken er dens mest kraftfulde fortæller. Min rolle som DJ er at lytte dybt – til værterne, til gæsterne, til energien i rummet – og svare igen med et soundtrack, der løfter oplevelsen fra almindelig til ekstraordinær.',
       celebrationsWeddingsTitle: 'Fester & bryllupper',

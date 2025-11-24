@@ -5,7 +5,8 @@ export const mockData = {
   // Bio and about information
   bio: {
     en: "DJ Ole Helledie brings together the art of musical curation with the craft of reading a room. Through years of experience behind the decks, he has developed an intuitive understanding of how music can transform spaces and connect people. Each event becomes a collaborative experience, where the energy of the crowd guides the musical journey from the first track to the last.",
-    da: "DJ Ole Helledie bringer musikens kurateringskunst sammen med håndværket at læse et rum. Gennem års erfaring bag pladespillerne har han udviklet en intuitiv forståelse af, hvordan musik kan transformere rum og forbinde mennesker. Hver begivenhed bliver til en kollaborativ oplevelse, hvor publikums energi styrer den musikalske rejse fra første til sidste track."
+    da: "Jeg er DJ med mange års erfaring fra firmafester, bryllupper og private arrangementer. Mit fokus er enkelt: at hjælpe med at skabe den bedst mulige fest. Jeg spiller dansevenlig pop, funk, soul, disco og de hits, der får folk ud på gulvet og i godt humør.\n" +
+        "Jeg læser rummet og publikum, tilpasser musikken undervejs og sørger for, at energien bygger sig op gennem aftenen. Det handler om god stemning, timing og at give gæsterne en oplevelse, de husker."
   },
 
   // Professional philosophy
