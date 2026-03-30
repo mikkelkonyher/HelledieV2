@@ -1,6 +1,69 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { fetchGalleryImages, uploadGalleryImage, updateGalleryImage, deleteGalleryImage, swapSortOrder } from '../../lib/api/gallery';
-import { ArrowUp, ArrowDown, Pencil, Trash2, Plus, X, Upload, Loader2, Image as ImageIcon, Film } from 'lucide-react';
+import { fetchGalleryImages, uploadGalleryImage, updateGalleryImage, deleteGalleryImage, reorderGalleryImages } from '../../lib/api/gallery';
+import { Pencil, Trash2, Plus, X, Upload, Loader2, Image as ImageIcon, Film, GripVertical } from 'lucide-react';
+import { DndContext, closestCenter, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { SortableContext, rectSortingStrategy, useSortable, arrayMove } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+
+const SortableItem = ({ image, onEdit, onDelete }) => {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: image.id });
+  const isVideo = image.file_type === 'video';
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    zIndex: isDragging ? 50 : 'auto',
+    opacity: isDragging ? 0.7 : 1,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div className="aspect-square overflow-hidden relative">
+        {isVideo ? (
+          <>
+            <video src={image.url} className="w-full h-full object-cover" muted playsInline preload="metadata" />
+            <div className="absolute top-2 right-2 bg-black/60 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
+              <Film size={12} />
+              Video
+            </div>
+          </>
+        ) : (
+          <img src={image.url} alt={image.caption_da || 'Gallery image'} className="w-full h-full object-cover" />
+        )}
+        {/* Drag handle overlay */}
+        <div
+          {...attributes}
+          {...listeners}
+          className="absolute top-2 left-2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded cursor-grab active:cursor-grabbing transition-colors"
+          title="Træk for at flytte"
+        >
+          <GripVertical size={16} />
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm text-gray-700 truncate">
+          {image.caption_da || image.caption_en || 'Ingen billedtekst'}
+        </p>
+        <div className="flex items-center justify-end gap-2 mt-3">
+          <button
+            onClick={() => onEdit(image)}
+            className="p-2 rounded-lg hover:bg-gray-100 text-gray-600 transition-colors"
+            title="Rediger"
+          >
+            <Pencil size={16} />
+          </button>
+          <button
+            onClick={() => onDelete(image)}
+            className="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors"
+            title="Slet"
+          >
+            <Trash2 size={16} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const AdminGallery = () => {
   const [images, setImages] = useState([]);
@@ -11,6 +74,11 @@ const AdminGallery = () => {
   const [deleteConfirm, setDeleteConfirm] = useState(null);
   const [showUpload, setShowUpload] = useState(false);
   const fileInputRef = useRef(null);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 200, tolerance: 5 } }),
+  );
 
   const loadImages = async () => {
     try {
@@ -24,6 +92,25 @@ const AdminGallery = () => {
   };
 
   useEffect(() => { loadImages(); }, []);
+
+  const handleDragEnd = async (event) => {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+
+    const oldIndex = images.findIndex(img => img.id === active.id);
+    const newIndex = images.findIndex(img => img.id === over.id);
+    const reordered = arrayMove(images, oldIndex, newIndex);
+
+    // Optimistic update
+    setImages(reordered);
+
+    try {
+      await reorderGalleryImages(reordered.map(img => img.id));
+    } catch (err) {
+      console.error('Reorder failed:', err);
+      await loadImages(); // Revert on failure
+    }
+  };
 
   const handleUpload = async (e) => {
     const files = Array.from(e.target.files);
@@ -52,8 +139,6 @@ const AdminGallery = () => {
       await updateGalleryImage(editingImage.id, {
         caption_da: editingImage.caption_da,
         caption_en: editingImage.caption_en,
-        alt_da: editingImage.alt_da,
-        alt_en: editingImage.alt_en,
       });
       setEditingImage(null);
       await loadImages();
@@ -72,19 +157,6 @@ const AdminGallery = () => {
     }
   };
 
-  const handleMove = async (index, direction) => {
-    const targetIndex = index + direction;
-    if (targetIndex < 0 || targetIndex >= images.length) return;
-    try {
-      await swapSortOrder(images[index], images[targetIndex]);
-      await loadImages();
-    } catch (err) {
-      alert('Fejl ved flytning: ' + err.message);
-    }
-  };
-
-  const isVideo = (image) => image.file_type === 'video';
-
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
@@ -98,7 +170,7 @@ const AdminGallery = () => {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-semibold text-gray-900">Galleri</h1>
-          <p className="text-gray-500 mt-1">{images.length} filer</p>
+          <p className="text-gray-500 mt-1">{images.length} filer — træk for at ændre rækkefølge</p>
         </div>
         <button
           onClick={() => setShowUpload(true)}
@@ -109,76 +181,23 @@ const AdminGallery = () => {
         </button>
       </div>
 
-      {/* Image grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {images.map((image, index) => (
-          <div key={image.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-            <div className="aspect-square overflow-hidden relative">
-              {isVideo(image) ? (
-                <>
-                  <video
-                    src={image.url}
-                    className="w-full h-full object-cover"
-                    muted
-                    playsInline
-                    preload="metadata"
-                  />
-                  <div className="absolute top-2 right-2 bg-black/60 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
-                    <Film size={12} />
-                    Video
-                  </div>
-                </>
-              ) : (
-                <img
-                  src={image.url}
-                  alt={image.alt_da || 'Gallery image'}
-                  className="w-full h-full object-cover"
+      {/* Sortable image grid */}
+      {images.length > 0 ? (
+        <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+          <SortableContext items={images.map(img => img.id)} strategy={rectSortingStrategy}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {images.map((image) => (
+                <SortableItem
+                  key={image.id}
+                  image={image}
+                  onEdit={(img) => setEditingImage({ ...img })}
+                  onDelete={(img) => setDeleteConfirm(img)}
                 />
-              )}
+              ))}
             </div>
-            <div className="p-4">
-              <p className="text-sm text-gray-700 truncate">
-                {image.caption_da || image.caption_en || 'Ingen billedtekst'}
-              </p>
-              <div className="flex items-center gap-2 mt-3">
-                <button
-                  onClick={() => handleMove(index, -1)}
-                  disabled={index === 0}
-                  className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  title="Flyt op"
-                >
-                  <ArrowUp size={16} />
-                </button>
-                <button
-                  onClick={() => handleMove(index, 1)}
-                  disabled={index === images.length - 1}
-                  className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  title="Flyt ned"
-                >
-                  <ArrowDown size={16} />
-                </button>
-                <div className="flex-1" />
-                <button
-                  onClick={() => setEditingImage({ ...image })}
-                  className="p-2 rounded-lg hover:bg-gray-100 text-gray-600 transition-colors"
-                  title="Rediger"
-                >
-                  <Pencil size={16} />
-                </button>
-                <button
-                  onClick={() => setDeleteConfirm(image)}
-                  className="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors"
-                  title="Slet"
-                >
-                  <Trash2 size={16} />
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {images.length === 0 && (
+          </SortableContext>
+        </DndContext>
+      ) : (
         <div className="text-center py-20 text-gray-500">
           <ImageIcon size={48} className="mx-auto mb-4 opacity-50" />
           <p>Ingen filer endnu. Upload det første!</p>
@@ -204,12 +223,8 @@ const AdminGallery = () => {
               ) : (
                 <>
                   <Upload className="mx-auto mb-3 text-gray-400" size={32} />
-                  <p className="text-sm text-gray-500 mb-1">
-                    Billeder og videoer
-                  </p>
-                  <p className="text-xs text-gray-400 mb-4">
-                    Billeder komprimeres automatisk. Video maks 50MB.
-                  </p>
+                  <p className="text-sm text-gray-500 mb-1">Billeder og videoer</p>
+                  <p className="text-xs text-gray-400 mb-4">Billeder komprimeres automatisk. Video maks 50MB.</p>
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -258,26 +273,6 @@ const AdminGallery = () => {
                     type="text"
                     value={editingImage.caption_en}
                     onChange={(e) => setEditingImage({ ...editingImage, caption_en: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Alt tekst (DA)</label>
-                  <input
-                    type="text"
-                    value={editingImage.alt_da}
-                    onChange={(e) => setEditingImage({ ...editingImage, alt_da: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Alt text (EN)</label>
-                  <input
-                    type="text"
-                    value={editingImage.alt_en}
-                    onChange={(e) => setEditingImage({ ...editingImage, alt_en: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
                   />
                 </div>
