@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { fetchGalleryImages, uploadGalleryImage, updateGalleryImage, deleteGalleryImage, swapSortOrder } from '../../lib/api/gallery';
-import { ArrowUp, ArrowDown, Pencil, Trash2, Plus, X, Upload, Loader2, Image as ImageIcon } from 'lucide-react';
+import { ArrowUp, ArrowDown, Pencil, Trash2, Plus, X, Upload, Loader2, Image as ImageIcon, Film } from 'lucide-react';
 
 const AdminGallery = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState('');
   const [editingImage, setEditingImage] = useState(null);
   const [deleteConfirm, setDeleteConfirm] = useState(null);
   const [showUpload, setShowUpload] = useState(false);
@@ -25,18 +26,22 @@ const AdminGallery = () => {
   useEffect(() => { loadImages(); }, []);
 
   const handleUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    const files = Array.from(e.target.files);
+    if (!files.length) return;
 
     setUploading(true);
     try {
-      await uploadGalleryImage(file);
+      for (const file of files) {
+        setUploadStatus(`${file.name}...`);
+        await uploadGalleryImage(file, (status) => setUploadStatus(`${file.name}: ${status}`));
+      }
       await loadImages();
       setShowUpload(false);
     } catch (err) {
       alert('Upload fejlede: ' + err.message);
     } finally {
       setUploading(false);
+      setUploadStatus('');
       if (fileInputRef.current) fileInputRef.current.value = '';
     }
   };
@@ -78,6 +83,8 @@ const AdminGallery = () => {
     }
   };
 
+  const isVideo = (image) => image.file_type === 'video';
+
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
@@ -91,14 +98,14 @@ const AdminGallery = () => {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-semibold text-gray-900">Galleri</h1>
-          <p className="text-gray-500 mt-1">{images.length} billeder</p>
+          <p className="text-gray-500 mt-1">{images.length} filer</p>
         </div>
         <button
           onClick={() => setShowUpload(true)}
           className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
         >
           <Plus size={20} />
-          Upload billede
+          Upload
         </button>
       </div>
 
@@ -106,12 +113,28 @@ const AdminGallery = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {images.map((image, index) => (
           <div key={image.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-            <div className="aspect-square overflow-hidden">
-              <img
-                src={image.url}
-                alt={image.alt_da || 'Gallery image'}
-                className="w-full h-full object-cover"
-              />
+            <div className="aspect-square overflow-hidden relative">
+              {isVideo(image) ? (
+                <>
+                  <video
+                    src={image.url}
+                    className="w-full h-full object-cover"
+                    muted
+                    playsInline
+                    preload="metadata"
+                  />
+                  <div className="absolute top-2 right-2 bg-black/60 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
+                    <Film size={12} />
+                    Video
+                  </div>
+                </>
+              ) : (
+                <img
+                  src={image.url}
+                  alt={image.alt_da || 'Gallery image'}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
             <div className="p-4">
               <p className="text-sm text-gray-700 truncate">
@@ -158,7 +181,7 @@ const AdminGallery = () => {
       {images.length === 0 && (
         <div className="text-center py-20 text-gray-500">
           <ImageIcon size={48} className="mx-auto mb-4 opacity-50" />
-          <p>Ingen billeder endnu. Upload det første!</p>
+          <p>Ingen filer endnu. Upload det første!</p>
         </div>
       )}
 
@@ -167,8 +190,8 @@ const AdminGallery = () => {
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl p-6 w-full max-w-md">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">Upload billede</h2>
-              <button onClick={() => setShowUpload(false)} className="text-gray-400 hover:text-gray-600">
+              <h2 className="text-lg font-semibold">Upload</h2>
+              <button onClick={() => !uploading && setShowUpload(false)} className="text-gray-400 hover:text-gray-600">
                 <X size={20} />
               </button>
             </div>
@@ -176,29 +199,30 @@ const AdminGallery = () => {
               {uploading ? (
                 <div className="flex flex-col items-center gap-3">
                   <Loader2 className="animate-spin text-indigo-600" size={32} />
-                  <p className="text-sm text-gray-500">Uploader...</p>
+                  <p className="text-sm text-gray-500">{uploadStatus || 'Uploader...'}</p>
                 </div>
               ) : (
                 <>
                   <Upload className="mx-auto mb-3 text-gray-400" size={32} />
-                  <p className="text-sm text-gray-500 mb-3">
-                    Klik for at vælge et billede
+                  <p className="text-sm text-gray-500 mb-1">
+                    Billeder og videoer
                   </p>
                   <p className="text-xs text-gray-400 mb-4">
-                    JPG, PNG, WebP eller GIF. Maks 5MB.
+                    Billeder komprimeres automatisk. Video maks 50MB.
                   </p>
                   <input
                     ref={fileInputRef}
                     type="file"
-                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/quicktime,video/webm"
                     onChange={handleUpload}
+                    multiple
                     className="hidden"
                   />
                   <button
                     onClick={() => fileInputRef.current?.click()}
                     className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors text-sm"
                   >
-                    Vælg billede
+                    Vælg filer
                   </button>
                 </>
               )}
@@ -212,7 +236,7 @@ const AdminGallery = () => {
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl p-6 w-full max-w-lg">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">Rediger billede</h2>
+              <h2 className="text-lg font-semibold">Rediger</h2>
               <button onClick={() => setEditingImage(null)} className="text-gray-400 hover:text-gray-600">
                 <X size={20} />
               </button>
@@ -282,9 +306,9 @@ const AdminGallery = () => {
       {deleteConfirm && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl p-6 w-full max-w-sm">
-            <h2 className="text-lg font-semibold mb-2">Slet billede?</h2>
+            <h2 className="text-lg font-semibold mb-2">Slet?</h2>
             <p className="text-gray-500 text-sm mb-6">
-              Dette kan ikke fortrydes. Billedet vil blive permanent slettet.
+              Dette kan ikke fortrydes. Filen vil blive permanent slettet.
             </p>
             <div className="flex justify-end gap-3">
               <button

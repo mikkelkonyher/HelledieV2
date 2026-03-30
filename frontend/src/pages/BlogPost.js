@@ -18,6 +18,11 @@ const BlogPost = () => {
       .finally(() => setLoading(false));
   }, [slug]);
 
+  const getText = (da, en) => {
+    if (language === 'da') return da || en || '';
+    return en || da || '';
+  };
+
   const formatDate = (dateStr) => {
     if (!dateStr) return '';
     return new Date(dateStr).toLocaleDateString(language === 'da' ? 'da-DK' : 'en-US', {
@@ -41,15 +46,15 @@ const BlogPost = () => {
             {language === 'da' ? 'Indlæg ikke fundet' : 'Post not found'}
           </h1>
           <Link to="/blog" className="text-indigo-600 hover:text-indigo-700">
-            {language === 'da' ? 'Tilbage til blog' : 'Back to blog'}
+            {language === 'da' ? 'Tilbage til nyheder' : 'Back to news'}
           </Link>
         </div>
       </div>
     );
   }
 
-  const title = language === 'da' ? post.title_da : post.title_en;
-  const content = language === 'da' ? post.content_da : post.content_en;
+  const title = getText(post.title_da, post.title_en);
+  const content = getText(post.content_da, post.content_en);
 
   return (
     <div className="min-h-screen py-20 bg-gray-50">
@@ -59,7 +64,7 @@ const BlogPost = () => {
           className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 mb-8 transition-colors"
         >
           <ArrowLeft size={16} />
-          {t('blog')}
+          {language === 'da' ? 'Nyheder' : 'News'}
         </Link>
 
         {post.image_url && (

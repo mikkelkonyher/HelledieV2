@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { fetchGalleryImages } from '../lib/api/gallery';
-import { X } from 'lucide-react';
+import { X, Play } from 'lucide-react';
 
 const Gallery = () => {
   const { language, t } = useLanguage();
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [galleryImages, setGalleryImages] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,18 +16,19 @@ const Gallery = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const openImage = (image) => {
-    setSelectedImage(image);
+  const openItem = (image) => {
+    setSelectedItem(image);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeImage = () => {
-    setSelectedImage(null);
+  const closeItem = () => {
+    setSelectedItem(null);
     document.body.style.overflow = 'auto';
   };
 
-  const getCaption = (image) => language === 'da' ? image.caption_da : image.caption_en;
-  const getAlt = (image) => language === 'da' ? image.alt_da : image.alt_en;
+  const getCaption = (image) => language === 'da' ? (image.caption_da || image.caption_en) : (image.caption_en || image.caption_da);
+  const getAlt = (image) => language === 'da' ? (image.alt_da || image.alt_en) : (image.alt_en || image.alt_da);
+  const isVideo = (image) => image.file_type === 'video';
 
   return (
     <div className="min-h-screen py-20 bg-gray-50">
@@ -53,20 +54,39 @@ const Gallery = () => {
               <div
                 key={image.id}
                 className="group relative bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                onClick={() => openImage(image)}
+                onClick={() => openItem(image)}
               >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={image.url}
-                    alt={getAlt(image) || 'Gallery image'}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+                <div className="aspect-square overflow-hidden relative">
+                  {isVideo(image) ? (
+                    <>
+                      <video
+                        src={image.url}
+                        className="w-full h-full object-cover"
+                        muted
+                        playsInline
+                        preload="metadata"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-14 h-14 bg-black/50 rounded-full flex items-center justify-center group-hover:bg-black/70 transition-colors">
+                          <Play size={24} className="text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <img
+                      src={image.url}
+                      alt={getAlt(image) || 'Gallery image'}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  )}
                 </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                  <div className="text-white font-light text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {getCaption(image)}
+                {!isVideo(image) && (
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                    <div className="text-white font-light text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {getCaption(image)}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
@@ -74,29 +94,40 @@ const Gallery = () => {
       </div>
 
       {/* Modal */}
-      {selectedImage && (
+      {selectedItem && (
         <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={closeImage}
+          onClick={closeItem}
         >
           <div
             className="relative max-w-4xl max-h-full"
             onClick={e => e.stopPropagation()}
           >
             <button
-              onClick={closeImage}
+              onClick={closeItem}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
             >
               <X size={32} />
             </button>
-            <img
-              src={selectedImage.url}
-              alt={getAlt(selectedImage) || 'Gallery image'}
-              className="max-w-full max-h-full object-contain rounded-lg"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4 rounded-b-lg">
-              <p className="text-center text-lg font-light">{getCaption(selectedImage)}</p>
-            </div>
+            {isVideo(selectedItem) ? (
+              <video
+                src={selectedItem.url}
+                controls
+                autoPlay
+                className="max-w-full max-h-[80vh] rounded-lg"
+              />
+            ) : (
+              <img
+                src={selectedItem.url}
+                alt={getAlt(selectedItem) || 'Gallery image'}
+                className="max-w-full max-h-full object-contain rounded-lg"
+              />
+            )}
+            {getCaption(selectedItem) && (
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4 rounded-b-lg">
+                <p className="text-center text-lg font-light">{getCaption(selectedItem)}</p>
+              </div>
+            )}
           </div>
         </div>
       )}
