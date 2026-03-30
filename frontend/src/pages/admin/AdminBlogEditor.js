@@ -28,8 +28,6 @@ const AdminBlogEditor = () => {
     title_da: '',
     title_en: '',
     slug: '',
-    excerpt_da: '',
-    excerpt_en: '',
     content_da: '',
     content_en: '',
     image_url: '',
@@ -44,8 +42,6 @@ const AdminBlogEditor = () => {
             title_da: post.title_da,
             title_en: post.title_en,
             slug: post.slug,
-            excerpt_da: post.excerpt_da,
-            excerpt_en: post.excerpt_en,
             content_da: post.content_da,
             content_en: post.content_en,
             image_url: post.image_url || '',
@@ -77,17 +73,18 @@ const AdminBlogEditor = () => {
       alert('Tilføj mindst en titel');
       return;
     }
-    if (!form.slug) {
-      alert('Slug er påkrævet');
-      return;
+
+    const submitData = { ...form };
+    if (!submitData.slug) {
+      submitData.slug = generateSlug(form.title_da || form.title_en);
     }
 
     setSaving(true);
     try {
       if (isEditing) {
-        await updatePost(id, form);
+        await updatePost(id, submitData);
       } else {
-        await createPost(form);
+        await createPost(submitData);
       }
       navigate('/admin/blog');
     } catch (err) {
@@ -112,11 +109,11 @@ const AdminBlogEditor = () => {
         className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
       >
         <ArrowLeft size={20} />
-        Tilbage til blog
+        Tilbage til nyheder
       </button>
 
       <h1 className="text-2xl font-semibold text-gray-900 mb-6">
-        {isEditing ? 'Rediger indlæg' : 'Nyt indlæg'}
+        {isEditing ? 'Rediger nyhed' : 'Ny nyhed'}
       </h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -153,34 +150,6 @@ const AdminBlogEditor = () => {
             onChange={(e) => handleChange(activeTab === 'da' ? 'title_da' : 'title_en', e.target.value)}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-lg"
             placeholder={activeTab === 'da' ? 'Indtast titel...' : 'Enter title...'}
-          />
-        </div>
-
-        {/* Slug */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Slug (URL)</label>
-          <div className="flex items-center">
-            <span className="text-sm text-gray-400 mr-2">/blog/</span>
-            <input
-              type="text"
-              value={form.slug}
-              onChange={(e) => handleChange('slug', e.target.value)}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm font-mono"
-            />
-          </div>
-        </div>
-
-        {/* Excerpt */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            {activeTab === 'da' ? 'Uddrag (DA)' : 'Excerpt (EN)'}
-          </label>
-          <textarea
-            value={activeTab === 'da' ? form.excerpt_da : form.excerpt_en}
-            onChange={(e) => handleChange(activeTab === 'da' ? 'excerpt_da' : 'excerpt_en', e.target.value)}
-            rows={2}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm resize-y"
-            placeholder={activeTab === 'da' ? 'Kort beskrivelse...' : 'Short description...'}
           />
         </div>
 

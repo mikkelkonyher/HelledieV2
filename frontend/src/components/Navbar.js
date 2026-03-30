@@ -14,7 +14,7 @@ const Navbar = () => {
     { path: '/about', label: t('about') },
     { path: '/gallery', label: t('gallery') },
     { path: '/links', label: t('links') },
-    { path: '/blog', label: t('blog') },
+    { path: '/blog', label: t('news') },
   ];
 
   return (

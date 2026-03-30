@@ -7,7 +7,7 @@ const navItems = [
   { to: '/admin', icon: LayoutDashboard, label: 'Dashboard', end: true },
   { to: '/admin/gallery', icon: Image, label: 'Galleri' },
   { to: '/admin/content', icon: FileText, label: 'Indhold' },
-  { to: '/admin/blog', icon: Newspaper, label: 'Blog' },
+  { to: '/admin/blog', icon: Newspaper, label: 'Nyheder' },
 ];
 
 const AdminLayout = () => {

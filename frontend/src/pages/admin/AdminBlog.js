@@ -62,7 +62,7 @@ const AdminBlog = () => {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-900">Blog</h1>
+          <h1 className="text-2xl font-semibold text-gray-900">Nyheder</h1>
           <p className="text-gray-500 mt-1">{posts.length} indlæg</p>
         </div>
         <Link

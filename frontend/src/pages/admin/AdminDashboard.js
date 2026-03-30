@@ -102,8 +102,8 @@ const AdminDashboard = () => {
       color: 'bg-green-50 text-green-600',
     },
     {
-      title: 'Blog',
-      description: 'Skriv og administrer blogindlæg',
+      title: 'Nyheder',
+      description: 'Skriv og administrer nyheder',
       icon: Newspaper,
       count: stats.blog,
       unit: 'indlæg',
