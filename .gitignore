@@ -6,6 +6,7 @@
 
 # Claude Code settings (contains MCP tokens)
 .claude/settings.json
+.mcp.json
 
 # Dependencies
 node_modules/
