@@ -2,9 +2,8 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "installCommand": "npm install",
-  "framework": null,
+  "framework": "create-react-app",
   "rewrites": [
     { "source": "/((?!assets|static|favicon|manifest|robots).*)", "destination": "/index.html" }
-  ],
-  "rootDirectory": "frontend"
+  ]
 }
