@@ -80,13 +80,11 @@ const Gallery = () => {
                     />
                   )}
                 </div>
-                {!isVideo(image) && (
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center px-6 py-4">
-                    <div className="text-white font-light text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
-                      {getCaption(image)}
-                    </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center px-6 py-4">
+                  <div className="text-white font-light text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                    {getCaption(image)}
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
